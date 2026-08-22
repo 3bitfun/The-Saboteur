@@ -13,8 +13,11 @@ export function useApp() {
 
 export function AppProvider({ children }) {
   const [supabaseConfig, setSupabaseConfig] = useState(() => {
-    const saved = localStorage.getItem('supabaseConfig')
-    return saved ? JSON.parse(saved) : { url: '', anonKey: '' }
+    const saved = JSON.parse(localStorage.getItem('supabaseConfig') || 'null')
+    return {
+      url: import.meta.env.VITE_SUPABASE_URL || saved?.url || '',
+      anonKey: import.meta.env.VITE_SUPABASE_ANON_KEY || saved?.anonKey || '',
+    }
   })
   
   const [supabaseClient, setSupabaseClient] = useState(null)

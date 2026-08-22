@@ -46,20 +46,24 @@ npm install
    - **Project URL** (e.g., `https://xxxxx.supabase.co`)
    - **anon/public key** (starts with `eyJhbG...`)
 
-### 4. Run the Development Server
+### 4. Configure Environment Variables
+
+Create a `.env` file in the project root:
+
+```env
+VITE_SUPABASE_URL=https://xxxxx.supabase.co
+VITE_SUPABASE_ANON_KEY=eyJhbG...
+```
+
+Restart the development server after changing `.env`. These values are used automatically by the app.
+
+### 5. Run the Development Server
 
 ```bash
 npm run dev
 ```
 
 The app will be available at `http://localhost:3000`
-
-### 5. Configure Supabase in the App
-
-1. Open the app in your browser
-2. Enter your Supabase URL and Anon Key in the configuration screen
-3. Click "CONNECT TO SUPABASE"
-4. Your credentials will be saved locally for future sessions
 
 ## How to Play
 
