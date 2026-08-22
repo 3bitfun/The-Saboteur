@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Orbitron', monospace;
+  background-color: #0a0a0f;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #12121a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ffff;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #bf00ff;
+}
+
+/* Neon glow effects */
+.neon-text-cyan {
+  text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff;
+}
+
+.neon-text-purple {
+  text-shadow: 0 0 5px #bf00ff, 0 0 10px #bf00ff, 0 0 15px #bf00ff;
+}
+
+.neon-text-red {
+  text-shadow: 0 0 5px #ff003c, 0 0 10px #ff003c, 0 0 15px #ff003c;
+}
+
+.neon-border-cyan {
+  box-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, inset 0 0 5px #00ffff;
+}
+
+.neon-border-purple {
+  box-shadow: 0 0 5px #bf00ff, 0 0 10px #bf00ff, inset 0 0 5px #bf00ff;
+}
+
+.neon-border-red {
+  box-shadow: 0 0 5px #ff003c, 0 0 10px #ff003c, inset 0 0 5px #ff003c;
+}
+
+/* Button hover effects */
+.btn-neon {
+  transition: all 0.3s ease;
+}
+
+.btn-neon:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+/* Card styling */
+.card-neon {
+  background: linear-gradient(135deg, rgba(18, 18, 26, 0.9) 0%, rgba(30, 30, 46, 0.9) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+/* Animations */
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.scanline::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    transparent 0%,
+    rgba(0, 255, 255, 0.1) 50%,
+    transparent 100%
+  );
+  animation: scanline 3s linear infinite;
+  pointer-events: none;
+}

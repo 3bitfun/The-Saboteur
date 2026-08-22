@@ -1,0 +1,39 @@
+# Dependencies
+node_modules\
+node_modules/
+node_modules/.bin
+vendor/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Build and test output
+dist/
+build/
+out/
+coverage/
+.nyc_output/
+
+# Logs and runtime files
+*.log
+logs/
+*.pid
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Temporary and backup files
+*.tmp
+*.temp
+*.bak
+*.orig
